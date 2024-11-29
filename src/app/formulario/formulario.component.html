@@ -1,0 +1,16 @@
+<form [formGroup]="contactoForm" (ngSubmit)="enviarFormulario()">
+  <div>
+    <label for="name">Nombre de usuario: </label>
+    <input id="name" type="text" formControlName="nombre"/>
+  </div>
+
+  <div>
+    <label for="tel">Telefono de usuario: </label>
+    <input id="tel" type="tel" formControlName="telefono"/>
+  </div>
+
+
+  <button type="submit" [disabled]="!contactoForm.valid">Enviar</button>
+</form>
+
+<p>Es valido el formulario ? {{contactoForm.valid}} </p>
